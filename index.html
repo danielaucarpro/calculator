@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Metas -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Title -->
+    <title>WADP 2 - Calculator - Daniel Aucar Felipe</title>
+    <!-- CSS Ref -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1 id="title">Calculator</h1>
+            <div class="first-row">
+                <input type="text" name="result" class="result" id="result" value="" placeholder="Result" readonly>
+            </div>
+            <div class="second-row">
+                <input type="button" value="C" onclick="clearScreen()" id="clear" class="operator" id="operator">
+                <input type="button" value="+/-" onclick="sendValue('-')" class="operator" id="operator">
+                <input type="button" value="%" onclick="sendValue('%')" class="operator" id="operator">
+                <input type="button" value="-" onclick="sendValue('/')" class="operator" id="operator">
+            </div>
+            <div class="third-row">
+                <input type="button" value="7" onclick="sendValue(7)" class="number" id="7">
+                <input type="button" value="8" onclick="sendValue(8)" class="number" id="8">
+                <input type="button" value="9" onclick="sendValue(9)" class="number" id="9">
+                <input type="button" value="x" onclick="sendValue('*')" class="operator" id="operator">
+            </div>
+            <div class="fourth-row">
+                <input type="button" value="4" onclick="sendValue(4)" class="number" id="4">
+                <input type="button" value="5" onclick="sendValue(5)" class="number" id="5">
+                <input type="button" value="6" onclick="sendValue(6)" class="number" id="6">
+                <input type="button" value="-" onclick="sendValue('-')" class="operator" id="operator">
+            </div>
+            <div class="fifth-row">
+                <input type="button" value="1" onclick="sendValue(1)" class="number" id="1">
+                <input type="button" value="2" onclick="sendValue(2)" class="number" id="2">
+                <input type="button" value="3" onclick="sendValue(3)" class="number" id="3">
+                <input type="button" value="+" onclick="sendValue('+')" class="operator" id="operator">
+            </div>
+            <div class="sixth-row">
+                <input type="button" class="empty">
+                <input type="button" value="0" onclick="sendValue(0)" class="number" id="number">
+                <input type="button" value="." onclick="sendValue('.')" class="number" id="number">
+                <input type="button" value="=" onclick="evalOp()" class="operator">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="socialMedia">
+            <p id="footer-name">Daniel Aucar</p>
+            <a href="https://www.linkedin.com/in/daniel-aucar-felipe-2a922291/">
+                <img src="./img/linkedin-icon-2.svg.png" alt="">
+            </a>
+            <a href="https://www.linkedin.com/in/daniel-aucar-felipe-2a922291/" target="_blank">Linkedin</a>
+        </div>
+    </footer>
+    <!-- JavaScript Ref -->
+    <script src="./script.js" sync defer></script>
+</body>
+
+</html>

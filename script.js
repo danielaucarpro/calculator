@@ -48,7 +48,7 @@ function percentage(value) {
     if (result.value === null) {
         document.getElementById('result').value = "";
     }
-    else if (result.value > 0) {
+    else if (result.value != 0) {
         sendValue(value);
         document.getElementById('result').value = value/100;
     }

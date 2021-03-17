@@ -6,11 +6,13 @@ function clearScreen() {
 
 //Change the result value according with number/operator clicked
 function sendValue(value) {
-    //the element with ID result will receive the value from the button clicked. 
+    //the element with ID result will receive the value from the button clicked.
     // in html each button has a on click event sending a value to the input result
+    //if the value is not a number just add the value to the result
     if(value !== Number){
         document.getElementById('result').value += value;
     }
+    //if the value is a number, format the number and add the value to the result
     else{
         let num = Number(value);
         document.getElementById('result').value += num.toLocaleString("en");
@@ -23,10 +25,13 @@ function evalOp() {
     let result = document.getElementById('result');
 
     //the result value now will be the result of a basic operation done by eval
-    //eval gets the value inside input and mate a operation according with what user typed
+    //eval gets the value inside input and make a operation according with what user typed
     result.value = eval(result.value);
 }
 
+//changing the number to positive and negative value. Using true or false method
+//on click add a plus o minus value in front of the number
+//if there is a operator already do nothing
 function plusMinus() {
     var boolean = '';
     console.log(boolean);
@@ -40,16 +45,18 @@ function plusMinus() {
         sendValue('-');
         boolean = true;
     }
-    
 }
 
-function percentage(value) {
-    let result = document.getElementById('result');
+//converting the number to percentage format
+function percentage() {
+    var result = document.getElementById('result');
     if (result.value === null) {
         document.getElementById('result').value = "";
     }
     else if (result.value != 0) {
-        sendValue(value);
-        document.getElementById('result').value = value/100;
+        let percentage = result.value/100;
+        console.log(percentage);
+        result.value = '';
+        sendValue(percentage);
     }
 }

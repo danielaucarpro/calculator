@@ -32,7 +32,7 @@ function plusMinus() {
     console.log(boolean);
     if (boolean == true) {
         sendValue('+');
-        boolean = true;
+        boolean = false;
         console.log(boolean);
     }
     else if(boolean == false){

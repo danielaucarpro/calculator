@@ -30,6 +30,7 @@ body{
     border-width: 1px;
     background-color: rgb(177, 255, 177);
     font-size: 15pt;
+    text-align: right;
 }
 
 .operator,

@@ -1,21 +1,34 @@
+//variables
+var result = document.getElementById('result');
+ 
+//on document ready
+$(document).ready(result.value = 0)
+
 //Clearing the screen
 function clearScreen() {
     //when the button id clicked set the value of the result element to blank
-    document.getElementById('result').value = "";
+    result.value = 0;
 }
 
-//Change the result value according with number/operator clicked
-function sendValue(value) {
-    //the element with ID result will receive the value from the button clicked.
-    // in html each button has a on click event sending a value to the input result
-    //if the value is not a number just add the value to the result
-    if(value !== Number){
-        document.getElementById('result').value += value;
+//Change the result value according with number clicked
+function sendNumber(value) {
+    //sending the value to result input
+    result.value += value;
+    //getting all inputs with operator ID so I can reverse the disabled status
+    //I am storing all operator nodes twice because if I try to get it only once, with a unique variable on top, all my buttons will be always desabled
+    let operator = document.querySelectorAll('#operator');
+    //so for each operator class I have in my html, make the button available again.
+    for (i = 0; i <= operator.length; i++) {
+        operator[i].disabled = false;
     }
-    //if the value is a number, format the number and add the value to the result
-    else{
-        let num = Number(value);
-        document.getElementById('result').value += num.toLocaleString("en");
+}
+
+function sendOperator(value) {
+    result.value += value;
+    let operator = document.querySelectorAll('#operator');
+    //for each operator class I have in my html, make the button disabled.
+    for (i = 0; i < operator.length; i++) {
+        operator[i].disabled = true;
     }
 }
 
@@ -33,17 +46,17 @@ function evalOp() {
 //on click add a plus o minus value in front of the number
 //if there is a operator already do nothing
 function plusMinus() {
-    var boolean = '';
-    console.log(boolean);
-    if (boolean == true) {
-        sendValue('+');
-        boolean = false;
-        console.log(boolean);
-    }
-    else if(boolean == false){
-        console.log(boolean);
-        sendValue('-');
-        boolean = true;
+    result.value = '-' + result.value;
+    let count = 0;
+    count++;
+    console.log(count);
+}
+
+function removePlusMinus(bool){
+    if(bool = true){
+        result.value = "" + result.value;
+        iveBeenPressed = false;
+        console.log(iveBeenPressed);
     }
 }
 
@@ -54,9 +67,10 @@ function percentage() {
         document.getElementById('result').value = "";
     }
     else if (result.value != 0) {
-        let percentage = result.value/100;
+        result.value = eval(result.value);
+        let percentage = result.value / 100;
         console.log(percentage);
         result.value = '';
-        sendValue(percentage);
+        sendOperator(percentage);
     }
 }

@@ -11,6 +11,8 @@
     <title>WADP 2 - Calculator - Daniel Aucar Felipe</title>
     <!-- CSS Ref -->
     <link rel="stylesheet" href="./style.css">
+    <!--Jquery Ref-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -24,30 +26,30 @@
                 <input type="button" value="C" onclick="clearScreen()" id="clear" class="operator" id="operator">
                 <input type="button" value="+/-" onclick="plusMinus()" class="operator" id="operator">
                 <input type="button" value="%" onclick="percentage('%')" class="operator" id="operator">
-                <input type="button" value="/" onclick="sendValue('/')" class="operator" id="operator">
+                <input type="button" value="/" onclick="sendOperator('/')" class="operator" id="operator">
             </div>
             <div class="third-row">
-                <input type="button" value="7" onclick="sendValue(7)" class="number" id="7">
-                <input type="button" value="8" onclick="sendValue(8)" class="number" id="8">
-                <input type="button" value="9" onclick="sendValue(9)" class="number" id="9">
-                <input type="button" value="x" onclick="sendValue('*')" class="operator" id="operator">
+                <input type="button" value="7" onclick="sendNumber(7)" class="number" id="7">
+                <input type="button" value="8" onclick="sendNumber(8)" class="number" id="8">
+                <input type="button" value="9" onclick="sendNumber(9)" class="number" id="9">
+                <input type="button" value="x" onclick="sendOperator('*')" class="operator" id="operator">
             </div>
             <div class="fourth-row">
-                <input type="button" value="4" onclick="sendValue(4)" class="number" id="4">
-                <input type="button" value="5" onclick="sendValue(5)" class="number" id="5">
-                <input type="button" value="6" onclick="sendValue(6)" class="number" id="6">
-                <input type="button" value="-" onclick="sendValue('-')" class="operator" id="operator">
+                <input type="button" value="4" onclick="sendNumber(4)" class="number" id="4">
+                <input type="button" value="5" onclick="sendNumber(5)" class="number" id="5">
+                <input type="button" value="6" onclick="sendNumber(6)" class="number" id="6">
+                <input type="button" value="-" onclick="sendOperator('-')" class="operator" id="operator">
             </div>
             <div class="fifth-row">
-                <input type="button" value="1" onclick="sendValue(1)" class="number" id="1">
-                <input type="button" value="2" onclick="sendValue(2)" class="number" id="2">
-                <input type="button" value="3" onclick="sendValue(3)" class="number" id="3">
-                <input type="button" value="+" onclick="sendValue('+')" class="operator" id="operator">
+                <input type="button" value="1" onclick="sendNumber(1)" class="number" id="1">
+                <input type="button" value="2" onclick="sendNumber(2)" class="number" id="2">
+                <input type="button" value="3" onclick="sendNumber(3)" class="number" id="3">
+                <input type="button" value="+" onclick="sendOperator('+')" class="operator" id="operator">
             </div>
             <div class="sixth-row">
                 <input type="button" class="empty">
-                <input type="button" value="0" onclick="sendValue(0)" class="number" id="number">
-                <input type="button" value="." onclick="sendValue('.')" class="number" id="number">
+                <input type="button" value="0" onclick="sendNumber(0)" class="number" id="number">
+                <input type="button" value="." onclick="sendOperator('.')" class="number" id="number">
                 <input type="button" value="=" onclick="evalOp()" class="operator">
             </div>
         </div>
@@ -62,6 +64,7 @@
         </div>
     </footer>
     <!-- JavaScript Ref -->
+    <!-- defer is saying that it should load the javascript after -->
     <script src="./script.js" sync defer></script>
 </body>
 

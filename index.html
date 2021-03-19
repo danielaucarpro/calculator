@@ -20,11 +20,12 @@
         <div class="container">
             <h1 id="title">Calculator</h1>
             <div class="first-row">
-                <input type="text" name="result" class="result" id="result" value="" placeholder="Result" readonly>
+                <input type="text" name="result" class="result" id="history" value="" readonly>
+                <input type="text" name="result" class="result" id="result" value="" placeholder="0" readonly>
             </div>
             <div class="second-row">
-                <input type="button" value="C" onclick="clearScreen()" id="clear" class="operator" id="operator">
-                <input type="button" value="+/-" onclick="plusMinus()" class="operator" id="operator">
+                <input type="button" value="C" onclick="clearScreen()" id="clear" class="operator" id="clear">
+                <input type="button" value="+/-" onclick="plusMinus()" class="operator" id="plusMinus">
                 <input type="button" value="%" onclick="percentage('%')" class="operator" id="operator">
                 <input type="button" value="/" onclick="sendOperator('/')" class="operator" id="operator">
             </div>
@@ -49,7 +50,7 @@
             <div class="sixth-row">
                 <input type="button" class="empty">
                 <input type="button" value="0" onclick="sendNumber(0)" class="number" id="number">
-                <input type="button" value="." onclick="sendOperator('.')" class="number" id="number">
+                <input type="button" value="." onclick="sendOperator('.')" class="number" id="operator">
                 <input type="button" value="=" onclick="evalOp()" class="operator">
             </div>
         </div>
